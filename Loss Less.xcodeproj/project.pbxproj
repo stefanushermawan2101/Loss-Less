@@ -17,6 +17,7 @@
 		7264C65727EC544500BC91B0 /* Loss_LessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C65627EC544500BC91B0 /* Loss_LessTests.swift */; };
 		7264C66127EC544500BC91B0 /* Loss_LessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C66027EC544500BC91B0 /* Loss_LessUITests.swift */; };
 		7264C66327EC544500BC91B0 /* Loss_LessUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C66227EC544500BC91B0 /* Loss_LessUITestsLaunchTests.swift */; };
+		7271B4EE27FAE7E1009A7C3D /* AddItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7271B4ED27FAE7E1009A7C3D /* AddItem.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7264C65C27EC544500BC91B0 /* Loss LessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Loss LessUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7264C66027EC544500BC91B0 /* Loss_LessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loss_LessUITests.swift; sourceTree = "<group>"; };
 		7264C66227EC544500BC91B0 /* Loss_LessUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loss_LessUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7271B4ED27FAE7E1009A7C3D /* AddItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItem.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				7264C63E27EC544400BC91B0 /* SceneDelegate.swift */,
 				7264C64027EC544400BC91B0 /* ViewController.swift */,
 				7264C64227EC544400BC91B0 /* Main.storyboard */,
+				7271B4ED27FAE7E1009A7C3D /* AddItem.storyboard */,
 				7264C64827EC544500BC91B0 /* Assets.xcassets */,
 				7264C64A27EC544500BC91B0 /* LaunchScreen.storyboard */,
 				7264C64D27EC544500BC91B0 /* Info.plist */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7264C64C27EC544500BC91B0 /* LaunchScreen.storyboard in Resources */,
+				7271B4EE27FAE7E1009A7C3D /* AddItem.storyboard in Resources */,
 				7264C64927EC544500BC91B0 /* Assets.xcassets in Resources */,
 				7264C64427EC544400BC91B0 /* Main.storyboard in Resources */,
 			);
