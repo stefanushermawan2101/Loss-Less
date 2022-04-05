@@ -71,8 +71,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K6Y-FB-e7K" userLabel="Overall Stack View">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="131"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="K6Y-FB-e7K" userLabel="Overall Stack View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o16-Tt-S2U">
                                                             <rect key="frame" x="0.0" y="0.0" width="105" height="131"/>
@@ -81,7 +81,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-1g-kba" userLabel="Detail Main Stack View">
-                                                            <rect key="frame" x="120" y="0.0" width="141" height="131"/>
+                                                            <rect key="frame" x="130" y="0.0" width="141" height="131"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMb-YE-sbl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="141" height="52.5"/>
@@ -131,7 +131,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iKe-Js-znD" userLabel="EditSymbol Stack View">
-                                                            <rect key="frame" x="276" y="0.0" width="79" height="131"/>
+                                                            <rect key="frame" x="296" y="0.0" width="79" height="131"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-Qq-a2w">
                                                                     <rect key="frame" x="0.0" y="0.0" width="79" height="85"/>
