@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31F9AEE127FDD88600CBBE55 /* MainModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9AEE027FDD88600CBBE55 /* MainModal.swift */; };
+		31F9AEE327FDE57C00CBBE55 /* AddNewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F9AEE227FDE57C00CBBE55 /* AddNewItem.swift */; };
 		7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63C27EC544400BC91B0 /* AppDelegate.swift */; };
 		7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63E27EC544400BC91B0 /* SceneDelegate.swift */; };
 		7264C64127EC544400BC91B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C64027EC544400BC91B0 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		31F9AEE027FDD88600CBBE55 /* MainModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModal.swift; sourceTree = "<group>"; };
+		31F9AEE227FDE57C00CBBE55 /* AddNewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItem.swift; sourceTree = "<group>"; };
 		7264C63927EC544400BC91B0 /* Loss Less.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loss Less.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7264C63C27EC544400BC91B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7264C63E27EC544400BC91B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				7264C64D27EC544500BC91B0 /* Info.plist */,
 				7264C64527EC544400BC91B0 /* Loss_Less.xcdatamodeld */,
 				31F9AEE027FDD88600CBBE55 /* MainModal.swift */,
+				31F9AEE227FDE57C00CBBE55 /* AddNewItem.swift */,
 			);
 			path = "Loss Less";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				7264C64727EC544400BC91B0 /* Loss_Less.xcdatamodeld in Sources */,
 				7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */,
 				7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */,
+				31F9AEE327FDE57C00CBBE55 /* AddNewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

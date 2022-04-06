@@ -42,33 +42,21 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="cndtionAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzy-kA-3fo"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S42-5n-oPr">
                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Expired"/>
-                                        <connections>
-                                            <action selector="cndtionExp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aO3-uc-jdS"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR1-86-VoI">
                                         <rect key="frame" x="187" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Warning"/>
-                                        <connections>
-                                            <action selector="cndtionWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcB-81-dPS"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnd-Ob-azU">
                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Good"/>
-                                        <connections>
-                                            <action selector="cndtionGood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="st6-j4-iah"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,7 +97,7 @@
                                                                         </attributedString>
                                                                     </buttonConfiguration>
                                                                     <connections>
-                                                                        <action selector="lblFoodName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lws-tJ-l2D"/>
+                                                                        <action selector="lblFoodName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3j-yC-3xB"/>
                                                                         <segue destination="NS5-KW-SOL" kind="show" id="Dbj-Zm-Um4"/>
                                                                     </connections>
                                                                 </button>
@@ -166,7 +154,6 @@
                                                                         </attributedString>
                                                                     </buttonConfiguration>
                                                                     <connections>
-                                                                        <action selector="mainBtnEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Cv-wX-Qch"/>
                                                                         <segue destination="obE-tP-AeW" kind="show" id="TW9-2q-rmp"/>
                                                                     </connections>
                                                                 </button>
@@ -187,7 +174,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                         <connections>
-                                            <action selector="mainBtnAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5X-Yp-Vcf"/>
                                             <segue destination="UHU-zT-hE1" kind="show" id="80N-0z-4SD"/>
                                         </connections>
                                     </button>
@@ -215,14 +201,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="u7f-CJ-vr7"/>
                     <connections>
-                        <outlet property="cndtionSymbol" destination="hBQ-Qq-a2w" id="CM3-di-OS4"/>
-                        <outlet property="foodImage" destination="o16-Tt-S2U" id="XZn-Ci-mSK"/>
-                        <outlet property="lblCreatedDate" destination="ErM-yM-tw3" id="IAD-Vg-kvQ"/>
-                        <outlet property="lblExpDate" destination="yiK-i9-Dyk" id="x9U-iW-sDo"/>
-                        <outlet property="lblLocation" destination="XI7-jl-HAD" id="tlQ-sZ-XBC"/>
-                        <outlet property="lblReminderDate" destination="vpj-UH-HWZ" id="oye-4W-4QM"/>
-                        <outlet property="mainTblView" destination="dNY-5L-Zvz" id="PXM-g2-o1L"/>
-                        <outlet property="mainsrchBar" destination="FRg-yC-9fE" id="X6Y-wy-ZfQ"/>
+                        <outlet property="lblFoodnameTxt" destination="EMb-YE-sbl" id="306-5Y-6CG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -241,11 +220,17 @@
                                 <rect key="frame" x="48" y="249.5" width="318" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ANIDesc:" destination="yxf-Mk-vyh" eventType="editingDidEnd" id="rgg-lA-X7a"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biC-lc-jVb">
                                 <rect key="frame" x="48" y="298.5" width="318" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ANIQty:" destination="yxf-Mk-vyh" eventType="editingDidEnd" id="2j6-t2-jSM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ole-yl-c4H">
                                 <rect key="frame" x="116" y="88" width="182.5" height="33.5"/>
@@ -269,16 +254,22 @@
                                 <rect key="frame" x="48" y="200.5" width="318" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="ANIName:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="OME-de-FSQ"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-Jh-VCd">
                                 <rect key="frame" x="319.5" y="347.5" width="46.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="calendar.badge.plus" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="ANIExpDateBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="Zwp-1o-38H"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7d9-aV-h31" userLabel="Category Stack View">
                                 <rect key="frame" x="48" y="455.5" width="318" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-qo-TX8">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-qo-TX8">
                                         <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
                                         <color key="tintColor" systemColor="systemMintColor"/>
                                         <state key="normal" title="Button"/>
@@ -287,8 +278,11 @@
                                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ANIFreezerBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="4Pg-Ka-sst"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-iC-Fj0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-iC-Fj0">
                                         <rect key="frame" x="112.5" y="0.0" width="93" height="31"/>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
                                         <state key="normal" title="Button"/>
@@ -297,13 +291,19 @@
                                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ANIFridgeBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="jfU-Mo-ESd"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-xw-d1r">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-xw-d1r">
                                         <rect key="frame" x="225.5" y="0.0" width="92.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Pantry">
                                             <backgroundConfiguration key="background" cornerRadius="10"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ANIPantryBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="ogP-dZ-yqv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -326,6 +326,9 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="ANISaveBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="NfU-9e-1vY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="onq-TX-L6B">
                                 <rect key="frame" x="48" y="560.5" width="318" height="181.5"/>
@@ -341,6 +344,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="ANICameraBtn:" destination="yxf-Mk-vyh" eventType="touchUpInside" id="1PZ-cR-kWl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLO-kR-mhI">
                                 <rect key="frame" x="48" y="353" width="87" height="20.5"/>
@@ -386,6 +392,10 @@
                             <constraint firstItem="SLO-kR-mhI" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="vbL-tN-hCC"/>
                             <constraint firstItem="OWi-Ik-I6d" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="xQt-oG-Fxb"/>
                         </constraints>
+                        <connections>
+                            <outlet property="ANIExpDate" destination="SLO-kR-mhI" id="hxI-Jb-wQO"/>
+                            <outlet property="ANIFoodPhoto" destination="onq-TX-L6B" id="1av-bq-NEs"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="46d-05-8cX"/>
                 </viewController>
