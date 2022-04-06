@@ -166,25 +166,15 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="NQh-Pi-wmy" userLabel="Footer Stack View">
-                                <rect key="frame" x="46.5" y="809" width="321.5" height="31"/>
+                                <rect key="frame" x="185.5" y="809" width="43.5" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWq-K3-Ddm" userLabel="Home">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-Qf-fhL" userLabel="Add New Item">
-                                        <rect key="frame" x="140" y="0.0" width="43.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                         <connections>
                                             <segue destination="UHU-zT-hE1" kind="show" id="80N-0z-4SD"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ey-1w-V6q" userLabel="Statistik">
-                                        <rect key="frame" x="273.5" y="0.0" width="48" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chart.line.uptrend.xyaxis" catalog="system"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -700,8 +690,6 @@
     <resources>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
-        <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
-        <image name="house" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
