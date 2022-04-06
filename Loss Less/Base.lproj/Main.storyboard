@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAo-It-N1U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAo-It-N1U">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,21 +42,33 @@
                                                 </fragment>
                                             </attributedString>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cndtionAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzy-kA-3fo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S42-5n-oPr">
                                         <rect key="frame" x="93.5" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Expired"/>
+                                        <connections>
+                                            <action selector="cndtionExp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aO3-uc-jdS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vR1-86-VoI">
                                         <rect key="frame" x="187" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Warning"/>
+                                        <connections>
+                                            <action selector="cndtionWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcB-81-dPS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnd-Ob-azU">
                                         <rect key="frame" x="280.5" y="0.0" width="93.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Good"/>
+                                        <connections>
+                                            <action selector="cndtionGood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="st6-j4-iah"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -97,6 +109,7 @@
                                                                         </attributedString>
                                                                     </buttonConfiguration>
                                                                     <connections>
+                                                                        <action selector="lblFoodName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lws-tJ-l2D"/>
                                                                         <segue destination="NS5-KW-SOL" kind="show" id="Dbj-Zm-Um4"/>
                                                                     </connections>
                                                                 </button>
@@ -153,6 +166,7 @@
                                                                         </attributedString>
                                                                     </buttonConfiguration>
                                                                     <connections>
+                                                                        <action selector="mainBtnEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Cv-wX-Qch"/>
                                                                         <segue destination="obE-tP-AeW" kind="show" id="TW9-2q-rmp"/>
                                                                     </connections>
                                                                 </button>
@@ -173,6 +187,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                         <connections>
+                                            <action selector="mainBtnAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r5X-Yp-Vcf"/>
                                             <segue destination="UHU-zT-hE1" kind="show" id="80N-0z-4SD"/>
                                         </connections>
                                     </button>
@@ -199,6 +214,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u7f-CJ-vr7"/>
+                    <connections>
+                        <outlet property="cndtionSymbol" destination="hBQ-Qq-a2w" id="CM3-di-OS4"/>
+                        <outlet property="foodImage" destination="o16-Tt-S2U" id="XZn-Ci-mSK"/>
+                        <outlet property="lblCreatedDate" destination="ErM-yM-tw3" id="IAD-Vg-kvQ"/>
+                        <outlet property="lblExpDate" destination="yiK-i9-Dyk" id="x9U-iW-sDo"/>
+                        <outlet property="lblLocation" destination="XI7-jl-HAD" id="tlQ-sZ-XBC"/>
+                        <outlet property="lblReminderDate" destination="vpj-UH-HWZ" id="oye-4W-4QM"/>
+                        <outlet property="mainTblView" destination="dNY-5L-Zvz" id="PXM-g2-o1L"/>
+                        <outlet property="mainsrchBar" destination="FRg-yC-9fE" id="X6Y-wy-ZfQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,11 +270,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reminding Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ied-F6-qes">
-                                <rect key="frame" x="48" y="347.5" width="279" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-Jh-VCd">
                                 <rect key="frame" x="319.5" y="347.5" width="46.5" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -258,7 +278,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7d9-aV-h31" userLabel="Category Stack View">
                                 <rect key="frame" x="48" y="455.5" width="318" height="31"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-qo-TX8">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-qo-TX8">
                                         <rect key="frame" x="0.0" y="0.0" width="92.5" height="31"/>
                                         <color key="tintColor" systemColor="systemMintColor"/>
                                         <state key="normal" title="Button"/>
@@ -268,7 +288,7 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-iC-Fj0">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-iC-Fj0">
                                         <rect key="frame" x="112.5" y="0.0" width="93" height="31"/>
                                         <color key="tintColor" systemColor="systemPurpleColor"/>
                                         <state key="normal" title="Button"/>
@@ -278,7 +298,7 @@
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-xw-d1r">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqL-xw-d1r">
                                         <rect key="frame" x="225.5" y="0.0" width="92.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Pantry">
@@ -322,6 +342,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLO-kR-mhI">
+                                <rect key="frame" x="48" y="353" width="87" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uxn-3r-fOL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -334,13 +360,10 @@
                             <constraint firstItem="OWi-Ik-I6d" firstAttribute="top" secondItem="7d9-aV-h31" secondAttribute="bottom" constant="30" id="9nh-xa-bGh"/>
                             <constraint firstItem="Ole-yl-c4H" firstAttribute="centerX" secondItem="yxf-Mk-vyh" secondAttribute="centerX" id="CtT-B6-NnU"/>
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="FU3-16-9WE" secondAttribute="trailing" constant="48" id="D9G-ZF-rZM"/>
-                            <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="Ied-F6-qes" secondAttribute="trailing" constant="87" id="EXM-PW-SyZ"/>
-                            <constraint firstItem="Ied-F6-qes" firstAttribute="top" secondItem="biC-lc-jVb" secondAttribute="bottom" constant="15" id="IaL-sZ-REe"/>
                             <constraint firstItem="4ut-QX-y3t" firstAttribute="top" secondItem="onq-TX-L6B" secondAttribute="bottom" constant="35" id="MNt-U1-D4c"/>
                             <constraint firstItem="Ole-yl-c4H" firstAttribute="top" secondItem="Uxn-3r-fOL" secondAttribute="top" id="NfK-bp-364"/>
                             <constraint firstItem="aVM-x0-12h" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="PlC-Hz-CbN"/>
                             <constraint firstItem="4ut-QX-y3t" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="RCS-Nt-peG"/>
-                            <constraint firstItem="YRM-B7-5l4" firstAttribute="top" secondItem="Ied-F6-qes" secondAttribute="bottom" constant="30" id="StF-wY-cBn"/>
                             <constraint firstItem="CcH-se-6fM" firstAttribute="top" secondItem="Ole-yl-c4H" secondAttribute="bottom" constant="35" id="Sun-zO-zzQ"/>
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="onq-TX-L6B" secondAttribute="trailing" constant="48" id="Uqd-BA-CW8"/>
                             <constraint firstItem="7d9-aV-h31" firstAttribute="centerX" secondItem="yxf-Mk-vyh" secondAttribute="centerX" id="VwT-pd-rWc"/>
@@ -348,9 +371,11 @@
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="aVM-x0-12h" secondAttribute="trailing" constant="48" id="bqh-JN-WhB"/>
                             <constraint firstItem="7d9-aV-h31" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="dl1-eF-VRD"/>
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="7d9-aV-h31" secondAttribute="trailing" constant="48" id="dr9-mx-pvg"/>
+                            <constraint firstItem="YRM-B7-5l4" firstAttribute="top" secondItem="SLO-kR-mhI" secondAttribute="bottom" constant="38" id="eri-KP-jBB"/>
+                            <constraint firstItem="BOu-Jh-VCd" firstAttribute="leading" secondItem="SLO-kR-mhI" secondAttribute="trailing" constant="184.5" id="gTW-Uv-w55"/>
                             <constraint firstItem="onq-TX-L6B" firstAttribute="top" secondItem="OWi-Ik-I6d" secondAttribute="bottom" constant="15" id="h79-Ch-3Cd"/>
-                            <constraint firstItem="Ied-F6-qes" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="jYR-CA-y2m"/>
                             <constraint firstItem="FU3-16-9WE" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="kS1-wI-PGX"/>
+                            <constraint firstItem="SLO-kR-mhI" firstAttribute="top" secondItem="biC-lc-jVb" secondAttribute="bottom" constant="20.5" id="lYy-fj-b8h"/>
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="bottom" secondItem="4ut-QX-y3t" secondAttribute="bottom" constant="35" id="mMf-ef-IbN"/>
                             <constraint firstItem="CcH-se-6fM" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="mw4-vl-axL"/>
                             <constraint firstItem="biC-lc-jVb" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="n3F-oq-Ngk"/>
@@ -358,6 +383,7 @@
                             <constraint firstItem="YRM-B7-5l4" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="qeD-ID-BTb"/>
                             <constraint firstItem="Uxn-3r-fOL" firstAttribute="trailing" secondItem="BOu-Jh-VCd" secondAttribute="trailing" constant="48" id="rlj-zR-vdW"/>
                             <constraint firstItem="FU3-16-9WE" firstAttribute="top" secondItem="CcH-se-6fM" secondAttribute="bottom" constant="15" id="t65-9f-0H3"/>
+                            <constraint firstItem="SLO-kR-mhI" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="vbL-tN-hCC"/>
                             <constraint firstItem="OWi-Ik-I6d" firstAttribute="leading" secondItem="Uxn-3r-fOL" secondAttribute="leading" constant="48" id="xQt-oG-Fxb"/>
                         </constraints>
                     </view>

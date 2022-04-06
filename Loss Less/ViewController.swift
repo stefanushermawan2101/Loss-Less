@@ -6,15 +6,40 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    @IBAction func showMessage(sender: UIButton) {
-        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        present(alertController, animated: true, completion: nil)
+    //Main Page
+    @IBOutlet weak var mainsrchBar: UISearchBar!
+    @IBOutlet weak var foodImage: UIImageView!
+    @IBOutlet weak var cndtionSymbol: UIImageView!
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblReminderDate: UILabel!
+    @IBOutlet weak var lblCreatedDate: UILabel!
+    @IBOutlet weak var lblExpDate: UILabel!
+    @IBOutlet weak var mainTblView: UITableView!
+    @IBAction func lblFoodName(_ sender: Any) {
     }
+    @IBAction func cndtionAll(_ sender: Any) {
+    }
+    @IBAction func cndtionExp(_ sender: Any) {
+    }
+    @IBAction func cndtionWarning(_ sender: Any) {
+    }
+    @IBAction func cndtionGood(_ sender: Any) {
+    }
+    @IBAction func mainBtnEdit(_ sender: Any) {
+    }
+    @IBAction func mainBtnAdd(_ sender: Any) {
+    }
+    
+    //Add New Item Page
+    
+    
+    
 }
 
