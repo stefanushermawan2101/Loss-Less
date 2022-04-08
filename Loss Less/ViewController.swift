@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -37,6 +38,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         MainFoodTblView.dataSource = self
         MainFoodTblView.delegate = self
     }
-
+    
+    
+    
 }
 
