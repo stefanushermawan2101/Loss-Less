@@ -10,36 +10,62 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var MainFoodTblView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    let fridgeArray = ["domba", "ayam", "kelinci"]
-    
-    func numberOfSections(in tableView: UITableView) -> Int
-     {
-         return 1
-     }
+    // reference ke manage object context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fridgeArray.count
+    //Data buat tabel
+    var items: [Person]?
+    
+    
+    
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return items.count
+       return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellFridge", for: indexPath)
-                
-                cell.textLabel!.text = fridgeArray[indexPath.row]
-                
-                return cell
+        
+        let person = self.items![indexPath.row]
+        
+        cell.textLabel?.text = person.name//items[indexPath.row]
+        
+        return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MainFoodTblView.dataSource = self
-        MainFoodTblView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
+        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newUser.setValue("dennis", forKey: "name")
+        
+        
+        fetchPeople()
+        
     }
     
-    
+    func fetchPeople() {
+        //fetch data from coredata to table view
+        do {
+            self.items = try context.fetch(Person.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        } catch {
+            
+        }
+        
+    }
     
 }
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="FoodData" representedClassName="FoodData" syncable="YES" codeGenerationType="class">
-        <attribute name="foodName" optional="YES" attributeType="String"/>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString=""/>
     </entity>
     <elements>
-        <element name="FoodData" positionX="-45" positionY="0" width="128" height="44"/>
+        <element name="Person" positionX="-45" positionY="0" width="128" height="74"/>
     </elements>
 </model>

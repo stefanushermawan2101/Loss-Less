@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		316D4B9D2800147700A04C09 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316D4B9B2800147700A04C09 /* Person+CoreDataClass.swift */; };
+		316D4B9E2800147700A04C09 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316D4B9C2800147700A04C09 /* Person+CoreDataProperties.swift */; };
 		7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63C27EC544400BC91B0 /* AppDelegate.swift */; };
 		7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63E27EC544400BC91B0 /* SceneDelegate.swift */; };
 		7264C64127EC544400BC91B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C64027EC544400BC91B0 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		316D4B9B2800147700A04C09 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		316D4B9C2800147700A04C09 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7264C63927EC544400BC91B0 /* Loss Less.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loss Less.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7264C63C27EC544400BC91B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7264C63E27EC544400BC91B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		316D4B9A2800041A00A04C09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				316D4B9B2800147700A04C09 /* Person+CoreDataClass.swift */,
+				316D4B9C2800147700A04C09 /* Person+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7264C63027EC544400BC91B0 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		7264C63B27EC544400BC91B0 /* Loss Less */ = {
 			isa = PBXGroup;
 			children = (
+				316D4B9A2800041A00A04C09 /* Model */,
 				7264C63C27EC544400BC91B0 /* AppDelegate.swift */,
 				7264C63E27EC544400BC91B0 /* SceneDelegate.swift */,
 				7264C64027EC544400BC91B0 /* ViewController.swift */,
@@ -267,6 +281,8 @@
 			files = (
 				7264C64127EC544400BC91B0 /* ViewController.swift in Sources */,
 				7264C64727EC544400BC91B0 /* Loss_Less.xcdatamodeld in Sources */,
+				316D4B9E2800147700A04C09 /* Person+CoreDataProperties.swift in Sources */,
+				316D4B9D2800147700A04C09 /* Person+CoreDataClass.swift in Sources */,
 				7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */,
 				7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */,
 			);

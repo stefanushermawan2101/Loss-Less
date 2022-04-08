@@ -200,7 +200,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="u7f-CJ-vr7"/>
                     <connections>
-                        <outlet property="MainFoodTblView" destination="dNY-5L-Zvz" id="czL-43-oko"/>
+                        <outlet property="tableView" destination="dNY-5L-Zvz" id="czL-43-oko"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
