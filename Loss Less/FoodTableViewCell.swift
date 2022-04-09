@@ -13,7 +13,12 @@ class FoodTableViewCell: UITableViewCell {
     @IBOutlet var foodLocationLabel: UILabel!
     @IBOutlet var foodAddedDateLabel: UILabel!
     @IBOutlet var foodExpDateLabel: UILabel!
-    @IBOutlet var foodImageView: UIImageView!
+    @IBOutlet var foodImageView: UIImageView!{
+        didSet {
+            foodImageView.layer.cornerRadius = 10.0
+            foodImageView.clipsToBounds = true
+        }
+    }
     @IBOutlet var conditionImageView: UIImageView!
 
     override func awakeFromNib() {
