@@ -6,31 +6,38 @@
 //
 
 import UIKit
+import Foundation
 
 class FoodTableViewController: UITableViewController {
     
-    var foodNames = ["Ramen", "Tomat", "Mie Goreng", "Chicken Wing", "Daging Sapi", "Bawang Merah"]
+//    var foodNames = ["Ramen", "Tomat", "Mie Goreng", "Chicken Wing", "Daging Sapi", "Bawang Merah"]
+//
+//    var foodImages = ["ramen", "tomato", "miGoreng", "chickenWing", "rawMeat", "bawangMerah"]
+//
+//    var foodLocations = ["Fridge", "Fridge", "Fridge", "Fridge", "Freezer", "Pantry"]
+//
+//    var addedDates = ["Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022"]
+//
+//    var expDates = ["Exp : 12/04/2022", "Exp : 16/04/2022", "Exp : 12/04/2022", "Exp : 13/04/2022", "Exp : 29/04/2022", "Exp : 21/04/2022"]
+//
+//    var foodConditions = ["warning", "good", "bad", "warning", "good", "good"]
+//
+//    var foodEaten = Array(repeating: false, count: 6)
     
-    var foodImages = ["ramen", "tomato", "miGoreng", "chickenWing", "rawMeat", "bawangMerah"]
+    var foods: [Food] = [
+        Food(name: "Ramen", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "ramen", condition: "warning", isEaten: false),
+        Food(name: "Tomat", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 16/04/2022", image: "tomato", condition: "good", isEaten: false),
+        Food(name: "Mie Goreng", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "miGoreng", condition: "bad", isEaten: false),
+        Food(name: "Chicken Wing", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "chickenWing", condition: "warning", isEaten: false),
+        Food(name: "Daging Sapi", location: "Freezer", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "rawMeat", condition: "good", isEaten: false),
+        Food(name: "Bawang Merah", location: "Pantry", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "bawangMerah", condition: "good", isEaten: false)
+    ]
     
-    var foodLocations = ["Fridge", "Fridge", "Fridge", "Fridge", "Freezer", "Pantry"]
-    
-    var addedDates = ["Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022", "Added : 09/04/2022"]
-    
-    var expDates = ["Exp : 12/04/2022", "Exp : 16/04/2022", "Exp : 12/04/2022", "Exp : 13/04/2022", "Exp : 29/04/2022", "Exp : 21/04/2022"]
-    
-    var foodConditions = ["warning", "good", "bad", "warning", "good", "good"]
-    
-    var foodEaten = Array(repeating: false, count: 6)
+    // MARK:M- View Controller Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
@@ -42,7 +49,7 @@ class FoodTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foodNames.count
+        return foods.count
     }
 
     
@@ -51,12 +58,14 @@ class FoodTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FoodTableViewCell
 
         // Configure the cell...
-        cell.foodNameLabel.text = foodNames[indexPath.row]
-        cell.foodLocationLabel.text = foodLocations[indexPath.row]
-        cell.foodAddedDateLabel.text = addedDates[indexPath.row]
-        cell.foodExpDateLabel.text = expDates[indexPath.row]
-        cell.foodImageView.image = UIImage(named: foodImages[indexPath.row])
-        cell.conditionImageView.image = UIImage(named: foodConditions[indexPath.row])
+        cell.foodNameLabel.text = foods[indexPath.row].name
+        cell.foodLocationLabel.text = foods[indexPath.row].location
+        cell.foodAddedDateLabel.text = foods[indexPath.row].addedDate
+        cell.foodExpDateLabel.text = foods[indexPath.row].expDate
+        cell.foodImageView.image = UIImage(named: foods[indexPath.row].image)
+        cell.conditionImageView.image = UIImage(named: foods[indexPath.row].condition)
+        
+        cell.accessoryType = foods[indexPath.row].isEaten ? .checkmark : .none
         
         return cell
     }
@@ -64,6 +73,8 @@ class FoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
+    
+    // MARK:- UITableViewDelegate Protocol
     
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete{
@@ -83,12 +94,14 @@ class FoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, sourceView, completionHandler in
             //delete the row from data source
-            self.foodNames.remove(at: indexPath.row)
-            self.foodLocations.remove(at: indexPath.row)
-            self.expDates.remove(at: indexPath.row)
-            self.addedDates.remove(at: indexPath.row)
-            self.foodImages.remove(at: indexPath.row)
-            self.foodConditions.remove(at: indexPath.row)
+//            self.foodNames.remove(at: indexPath.row)
+//            self.foodLocations.remove(at: indexPath.row)
+//            self.expDates.remove(at: indexPath.row)
+//            self.addedDates.remove(at: indexPath.row)
+//            self.foodImages.remove(at: indexPath.row)
+//            self.foodConditions.remove(at: indexPath.row)
+            
+            self.foods.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
             
@@ -96,11 +109,11 @@ class FoodTableViewController: UITableViewController {
             completionHandler(true)
         }
         let shareAction = UIContextualAction(style: .normal, title: "Share") { action, sourceView, completionHandler in
-            let defaultText = "Just checking your " + self.foodNames[indexPath.row]
+            let defaultText = "Just checking your " + self.foods[indexPath.row].name
             
             let activityController: UIActivityViewController
             
-            if let imageToShare = UIImage(named: self.foodImages[indexPath.row]) {
+            if let imageToShare = UIImage(named: self.foods[indexPath.row].image) {
 //                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
                 activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
             }else{
@@ -129,20 +142,21 @@ class FoodTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             let checkInAction = UIContextualAction(style: .normal, title: "Check-in") { (action, sourceView, completionHandler) in
                 let cell = tableView.cellForRow(at: indexPath) as! FoodTableViewCell
-                self.foodEaten[indexPath.row] = (self.foodEaten[indexPath.row]) ? false : true
-                cell.accessoryType = (self.foodEaten[indexPath.row]) ? .checkmark : .none
+                self.foods[indexPath.row].isEaten = (self.foods[indexPath.row].isEaten) ? false : true
+                cell.accessoryType = (self.foods[indexPath.row].isEaten) ? .checkmark : .none
                 
                 completionHandler(true)
             }
             
             // Customize the action button
             checkInAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
-            checkInAction.image = self.foodEaten[indexPath.row] ? UIImage(named: "undo") : UIImage(named: "tick")
+        checkInAction.image = self.foods[indexPath.row].isEaten ? UIImage(named: "undo") : UIImage(named: "tick")
             
             let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
             
             return swipeConfiguration
         }
+    
     
     
     /*
@@ -180,14 +194,18 @@ class FoodTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showFoodDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! FoodDetailViewController
+                destinationController.food = foods[indexPath.row]
+            }
+        }
     }
-    */
+    
 
 }

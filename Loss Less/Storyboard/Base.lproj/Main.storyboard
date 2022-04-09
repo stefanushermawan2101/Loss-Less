@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k5b-9a-fTz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VnT-XV-oMW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Food Table View Controller-->
+        <!--Loss Less-->
         <scene sceneID="uvd-Gm-5jh">
             <objects>
                 <tableViewController id="k5b-9a-fTz" customClass="FoodTableViewController" customModule="Loss_Less" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,6 +108,7 @@
                                     <outlet property="foodImageView" destination="abU-u3-62h" id="q9X-Gm-veF"/>
                                     <outlet property="foodLocationLabel" destination="CNX-yn-Srf" id="VSN-Vx-ZSx"/>
                                     <outlet property="foodNameLabel" destination="U84-En-ZJH" id="N5f-8Q-NDs"/>
+                                    <segue destination="2h1-Tq-XBJ" kind="show" identifier="showFoodDetail" id="mqf-41-oPh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,10 +117,59 @@
                             <outlet property="delegate" destination="k5b-9a-fTz" id="YPS-tL-ONA"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Loss Less" id="lz7-eL-l5P"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSh-7O-Xwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314.49275362318843" y="87.723214285714278"/>
+            <point key="canvasLocation" x="770" y="88"/>
+        </scene>
+        <!--Food Detail View Controller-->
+        <scene sceneID="2BM-fJ-X8Y">
+            <objects>
+                <viewController id="2h1-Tq-XBJ" customClass="FoodDetailViewController" customModule="Loss_Less" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TC6-Vr-MBH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDh-tQ-0mw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nEB-fB-ahf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QDh-tQ-0mw" secondAttribute="bottom" id="8qh-vE-XGL"/>
+                            <constraint firstItem="QDh-tQ-0mw" firstAttribute="trailing" secondItem="nEB-fB-ahf" secondAttribute="trailing" id="EA5-7E-shJ"/>
+                            <constraint firstItem="QDh-tQ-0mw" firstAttribute="top" secondItem="TC6-Vr-MBH" secondAttribute="top" id="Tdp-yL-lZl"/>
+                            <constraint firstItem="QDh-tQ-0mw" firstAttribute="leading" secondItem="nEB-fB-ahf" secondAttribute="leading" id="vjR-P0-PVD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pca-78-Ff7"/>
+                    <connections>
+                        <outlet property="foodImageView" destination="QDh-tQ-0mw" id="wvA-PI-2r4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tr-uN-End" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585.5072463768117" y="87.723214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MAs-kq-lFW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VnT-XV-oMW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OBJ-MO-jPY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k5b-9a-fTz" kind="relationship" relationship="rootViewController" id="Vgq-yD-Bjh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNk-fT-8dE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="88"/>
         </scene>
     </scenes>
     <resources>
