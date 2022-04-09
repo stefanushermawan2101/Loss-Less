@@ -25,12 +25,12 @@ class FoodTableViewController: UITableViewController {
 //    var foodEaten = Array(repeating: false, count: 6)
     
     var foods: [Food] = [
-        Food(name: "Ramen", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "ramen", condition: "warning", isEaten: false),
-        Food(name: "Tomat", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 16/04/2022", image: "tomato", condition: "good", isEaten: false),
-        Food(name: "Mie Goreng", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "miGoreng", condition: "bad", isEaten: false),
-        Food(name: "Chicken Wing", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "chickenWing", condition: "warning", isEaten: false),
-        Food(name: "Daging Sapi", location: "Freezer", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "rawMeat", condition: "good", isEaten: false),
-        Food(name: "Bawang Merah", location: "Pantry", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "bawangMerah", condition: "good", isEaten: false)
+        Food(name: "Ramen", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "ramen", condition: "warning", isEaten: false, description: "Ramen beli di Marugame"),
+        Food(name: "Tomat", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 16/04/2022", image: "tomato", condition: "good", isEaten: false, description: "Tomat beli di Hero"),
+        Food(name: "Mie Goreng", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "miGoreng", condition: "bad", isEaten: false, description: "Indomie bikinan semalem"),
+        Food(name: "Chicken Wing", location: "Fridge", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "chickenWing", condition: "warning", isEaten: false, description: "Chicken wing dibeliin CALON BINI"),
+        Food(name: "Daging Sapi", location: "Freezer", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "rawMeat", condition: "good", isEaten: false, description: "Daging sapi asli dari sapinya"),
+        Food(name: "Bawang Merah", location: "Pantry", addedDate: "Added : 09/04/2022", expDate: "Exp : 12/04/2022", image: "bawangMerah", condition: "good", isEaten: false, description: "Kakaknya bawang putih yang baik hati")
     ]
     
     // MARK:M- View Controller Life Cycle

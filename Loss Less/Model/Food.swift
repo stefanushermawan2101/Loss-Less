@@ -15,9 +15,10 @@ class Food {
     var image: String
     var condition: String
     var isEaten: Bool
+    var description: String
     
     
-    init(name: String, location: String, addedDate: String, expDate: String, image: String, condition: String, isEaten: Bool) {
+    init(name: String, location: String, addedDate: String, expDate: String, image: String, condition: String, isEaten: Bool, description: String) {
         
         self.name = name
         self.location = location
@@ -26,11 +27,11 @@ class Food {
         self.image = image
         self.condition = condition
         self.isEaten = isEaten
-        
+        self.description = description
     }
     
     convenience init() {
-        self.init(name: "", location: "", addedDate: "", expDate: "", image: "", condition: "", isEaten: false)
+        self.init(name: "", location: "", addedDate: "", expDate: "", image: "", condition: "", isEaten: false, description: "")
     }
-  
+   
 }
