@@ -53,7 +53,7 @@ class FoodDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.descriptionLabel.text = food.description
             return cell
         default:
-            fatalError("Failed to instantiate the table view cell for detail view controller!!!")
+            fatalError("Failed to instantiate the table view cell for detail view controller!!!!!!")
         }
     }
     
