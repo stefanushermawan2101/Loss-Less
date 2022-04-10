@@ -38,6 +38,19 @@ class FoodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //customize NavBar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.hidesBarsOnSwipe = true
+        
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
     }
 
     // MARK: - Table view data source
@@ -149,8 +162,8 @@ class FoodTableViewController: UITableViewController {
             }
             
             // Customize the action button
-            checkInAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
-        checkInAction.image = self.foods[indexPath.row].isEaten ? UIImage(named: "undo") : UIImage(named: "tick")
+            checkInAction.backgroundColor = UIColor(red: 30, green: 174, blue: 96)
+            checkInAction.image = self.foods[indexPath.row].isEaten ? UIImage(named: "undo") : UIImage(named: "tick")
             
             let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
             

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722F57F928028494002BC4AE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F57F828028494002BC4AE /* UIColor+Ext.swift */; };
+		722F57FB280286BA002BC4AE /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F57FA280286BA002BC4AE /* UINavigationController+Ext.swift */; };
 		7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63C27EC544400BC91B0 /* AppDelegate.swift */; };
 		7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7264C63E27EC544400BC91B0 /* SceneDelegate.swift */; };
 		7264C64427EC544400BC91B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7264C64227EC544400BC91B0 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		722F57F828028494002BC4AE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		722F57FA280286BA002BC4AE /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		7264C63927EC544400BC91B0 /* Loss Less.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loss Less.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7264C63C27EC544400BC91B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7264C63E27EC544400BC91B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		722F57F728028469002BC4AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				722F57F828028494002BC4AE /* UIColor+Ext.swift */,
+				722F57FA280286BA002BC4AE /* UINavigationController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7264C63027EC544400BC91B0 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		7264C63B27EC544400BC91B0 /* Loss Less */ = {
 			isa = PBXGroup;
 			children = (
+				722F57F728028469002BC4AE /* Extensions */,
 				72A1D0A52801E12B0035931D /* Resources */,
 				727A57CA2801804500B228E3 /* Storyboard */,
 				727A57C92801802E00B228E3 /* Model */,
@@ -321,8 +335,10 @@
 			files = (
 				727A57C62801734D00B228E3 /* Food.swift in Sources */,
 				7264C64727EC544400BC91B0 /* Loss_Less.xcdatamodeld in Sources */,
+				722F57FB280286BA002BC4AE /* UINavigationController+Ext.swift in Sources */,
 				7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */,
 				72F7623A280115C100505D6E /* FoodTableViewCell.swift in Sources */,
+				722F57F928028494002BC4AE /* UIColor+Ext.swift in Sources */,
 				72A1D0AD2801F6AB0035931D /* FoodDetailTextViewCell.swift in Sources */,
 				72A1D0A92801F32E0035931D /* FoodDetailIconTextCell.swift in Sources */,
 				72A1D0A72801E62C0035931D /* FoodDetailHeaderView.swift in Sources */,

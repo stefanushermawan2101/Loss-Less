@@ -26,6 +26,23 @@ class FoodDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         //Configure the table view
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //Customize arrow navBar
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.hidesBarsOnSwipe = false
+        
+        tableView.contentInsetAdjustmentBehavior = .never
+        
+        navigationController?.hidesBarsOnSwipe = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = false
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,6 +72,10 @@ class FoodDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             fatalError("Failed to instantiate the table view cell for detail view controller!!!!!!")
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 
