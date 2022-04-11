@@ -30,6 +30,36 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
             addedTextField.delegate = self
         }
     }
+    let datePicker = UIDatePicker()
+    
+    func createDatePicker() {
+
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        
+        toolbar.setItems([doneBtn], animated: true)
+        
+        addedTextField.inputAccessoryView = toolbar
+        
+        addedTextField.inputView = datePicker
+                
+        datePicker.datePickerMode = .date
+        
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        
+        datePicker.preferredDatePickerStyle = .inline
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        addedTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
     
     @IBOutlet var expTextField: RoundedTextField! {
         didSet {
@@ -38,6 +68,37 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         }
     }
     
+    func createDatePickerExp() {
+
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedExp))
+        
+        toolbar.setItems([doneBtn], animated: true)
+        
+        
+        expTextField.inputAccessoryView = toolbar
+        
+        expTextField.inputView = datePicker
+
+        
+        datePicker.datePickerMode = .date
+        
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        
+        datePicker.preferredDatePickerStyle = .inline
+    }
+
+    @objc func donePressedExp(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        expTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+
+    }
     @IBOutlet var descriptionTextView: UITextView! {
         didSet {
             descriptionTextView.tag = 5
@@ -53,6 +114,8 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         super.viewDidLoad()
 
         //Configure navigation bar appearance
+        createDatePicker()
+        createDatePickerExp()
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.shadowImage = UIImage()
         
