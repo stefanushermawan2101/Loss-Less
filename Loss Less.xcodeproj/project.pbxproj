@@ -49,6 +49,7 @@
 /* Begin PBXFileReference section */
 		7222515A2802BC3100536729 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		7222515C2802BE1300536729 /* NewFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodController.swift; sourceTree = "<group>"; };
+		72261BBE2803D85900B5B184 /* Loss Less.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Loss Less.entitlements"; sourceTree = "<group>"; };
 		722F57F828028494002BC4AE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		722F57FA280286BA002BC4AE /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		7264C63927EC544400BC91B0 /* Loss Less.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Loss Less.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +131,7 @@
 		7264C63B27EC544400BC91B0 /* Loss Less */ = {
 			isa = PBXGroup;
 			children = (
+				72261BBE2803D85900B5B184 /* Loss Less.entitlements */,
 				722F57F728028469002BC4AE /* Extensions */,
 				72A1D0A52801E12B0035931D /* Resources */,
 				727A57CA2801804500B228E3 /* Storyboard */,
@@ -527,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Loss Less/Loss Less.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -555,6 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Loss Less/Loss Less.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
