@@ -11,10 +11,17 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Customize of the back button
+        let backButtonImage = UIImage(named: "back")
+        UINavigationBar.appearance().backIndicatorImage = backButtonImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
+        
+        //Changing the style of the status bar gobally
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 
