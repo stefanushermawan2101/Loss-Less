@@ -9,6 +9,8 @@ import UIKit
 
 class FoodTableViewCell: UITableViewCell {
     
+    static let identifier = "ListFoodTableViewCell"
+    
     @IBOutlet var foodNameLabel: UILabel!
     @IBOutlet var foodLocationLabel: UILabel!
     @IBOutlet var foodAddedDateLabel: UILabel!
@@ -20,6 +22,12 @@ class FoodTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet var conditionImageView: UIImageView!
+    
+    func setup(food: Food) {
+        foodNameLabel.text = food.title
+        foodLocationLabel.text = food.location
+        foodExpDateLabel.text = food.expDate
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

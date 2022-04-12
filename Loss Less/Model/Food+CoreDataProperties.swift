@@ -2,7 +2,7 @@
 //  Food+CoreDataProperties.swift
 //  Loss Less
 //
-//  Created by Dicky Alamsyah on 12/04/22.
+//  Created by Dicky Alamsyah on 13/04/22.
 //
 //
 
@@ -16,10 +16,14 @@ extension Food {
         return NSFetchRequest<Food>(entityName: "Food")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var lastUpdated: Date?
-    @NSManaged public var imageFood: Data?
-    @NSManaged public var text: String?
+    @NSManaged public var expDate: Date!
+    @NSManaged public var id: UUID!
+    @NSManaged public var imageFood: Data!
+    @NSManaged public var isEaten: Bool
+    @NSManaged public var lastUpdated: Date!
+    @NSManaged public var location: String!
+    @NSManaged public var name: String!
+    @NSManaged public var text: String!
 
 }
 
