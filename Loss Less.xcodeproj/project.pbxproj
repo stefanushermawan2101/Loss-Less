@@ -29,6 +29,7 @@
 		D81A0FEF280508C700B6BD2E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A0FEE280508C700B6BD2E /* Date+Ext.swift */; };
 		D82A0C75280624B200BC3FE0 /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A0C73280624B200BC3FE0 /* Food+CoreDataClass.swift */; };
 		D82A0C76280624B200BC3FE0 /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A0C74280624B200BC3FE0 /* Food+CoreDataProperties.swift */; };
+		D82A0C782806328000BC3FE0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A0C772806328000BC3FE0 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		D81A0FEE280508C700B6BD2E /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		D82A0C73280624B200BC3FE0 /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82A0C74280624B200BC3FE0 /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82A0C772806328000BC3FE0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "Loss Less/Model/CoreDataManager.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,6 @@
 				7264C64D27EC544500BC91B0 /* Info.plist */,
 				7264C63C27EC544400BC91B0 /* AppDelegate.swift */,
 				7264C63E27EC544400BC91B0 /* SceneDelegate.swift */,
-				7264C64527EC544400BC91B0 /* Loss_Less.xcdatamodeld */,
 			);
 			path = "Loss Less";
 			sourceTree = "<group>";
@@ -194,6 +195,8 @@
 			children = (
 				D82A0C73280624B200BC3FE0 /* Food+CoreDataClass.swift */,
 				D82A0C74280624B200BC3FE0 /* Food+CoreDataProperties.swift */,
+				D82A0C772806328000BC3FE0 /* CoreDataManager.swift */,
+				7264C64527EC544400BC91B0 /* Loss_Less.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				722F57FB280286BA002BC4AE /* UINavigationController+Ext.swift in Sources */,
 				7222515B2802BC3100536729 /* RoundedTextField.swift in Sources */,
 				7264C63D27EC544400BC91B0 /* AppDelegate.swift in Sources */,
+				D82A0C782806328000BC3FE0 /* CoreDataManager.swift in Sources */,
 				72F7623A280115C100505D6E /* FoodTableViewCell.swift in Sources */,
 				722F57F928028494002BC4AE /* UIColor+Ext.swift in Sources */,
 				72A1D0AD2801F6AB0035931D /* FoodDetailTextViewCell.swift in Sources */,
