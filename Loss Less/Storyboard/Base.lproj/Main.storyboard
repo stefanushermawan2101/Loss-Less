@@ -343,6 +343,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="VEg-cO-3LX">
                             <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="doneButtonTap:" destination="iEV-le-qOY" id="mIE-VY-qNZ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
