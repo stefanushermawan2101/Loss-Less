@@ -27,6 +27,7 @@
 		72A1D0AD2801F6AB0035931D /* FoodDetailTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A1D0AC2801F6AB0035931D /* FoodDetailTextViewCell.swift */; };
 		72F7623828010BC800505D6E /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7623728010BC800505D6E /* FoodTableViewController.swift */; };
 		72F7623A280115C100505D6E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76239280115C100505D6E /* FoodTableViewCell.swift */; };
+		D81A0FEF280508C700B6BD2E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A0FEE280508C700B6BD2E /* Date+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		72A1D0AC2801F6AB0035931D /* FoodDetailTextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailTextViewCell.swift; sourceTree = "<group>"; };
 		72F7623728010BC800505D6E /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		72F76239280115C100505D6E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		D81A0FEE280508C700B6BD2E /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				722F57F828028494002BC4AE /* UIColor+Ext.swift */,
+				D81A0FEE280508C700B6BD2E /* Date+Ext.swift */,
 				722F57FA280286BA002BC4AE /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
@@ -348,6 +351,7 @@
 				722F57F928028494002BC4AE /* UIColor+Ext.swift in Sources */,
 				72A1D0AD2801F6AB0035931D /* FoodDetailTextViewCell.swift in Sources */,
 				7222515D2802BE1300536729 /* NewFoodController.swift in Sources */,
+				D81A0FEF280508C700B6BD2E /* Date+Ext.swift in Sources */,
 				72A1D0A92801F32E0035931D /* FoodDetailIconTextCell.swift in Sources */,
 				72A1D0A72801E62C0035931D /* FoodDetailHeaderView.swift in Sources */,
 				727A57C428016E0C00B228E3 /* FoodDetailViewController.swift in Sources */,
