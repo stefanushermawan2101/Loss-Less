@@ -42,7 +42,9 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
       }
     }
     
+        
     @IBAction func doneButtonTap(_ sender: Any) {
+        let components = Calendar.current.dateComponents([.month, .day], from: datePicker.date)
         // Request Notification Settings
           UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
               switch notificationSettings.authorizationStatus {
@@ -66,9 +68,14 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
                   content.sound = UNNotificationSound.default
                   
                   
-                  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                  
+                  var dateComponents = DateComponents()
+                      dateComponents.hour = 12
+                      dateComponents.day = components.day
+                      dateComponents.month = components.month
+                      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
 
-                  let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                      let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                       center.add(request)
                   print("MASUK BRO!")
               case .denied:
@@ -151,7 +158,9 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         
         expTextField.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
-
+        
+        let components = Calendar.current.dateComponents([.month, .day], from: datePicker.date)
+        
     }
     @IBOutlet var descriptionTextView: UITextView! {
         didSet {
