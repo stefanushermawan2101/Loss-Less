@@ -28,6 +28,8 @@
 		72F7623828010BC800505D6E /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7623728010BC800505D6E /* FoodTableViewController.swift */; };
 		72F7623A280115C100505D6E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F76239280115C100505D6E /* FoodTableViewCell.swift */; };
 		D81A0FEF280508C700B6BD2E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A0FEE280508C700B6BD2E /* Date+Ext.swift */; };
+		D81A0FF2280509EF00B6BD2E /* Food+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A0FF0280509EF00B6BD2E /* Food+CoreDataClass.swift */; };
+		D81A0FF3280509EF00B6BD2E /* Food+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A0FF1280509EF00B6BD2E /* Food+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		72F7623728010BC800505D6E /* FoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		72F76239280115C100505D6E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		D81A0FEE280508C700B6BD2E /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		D81A0FF0280509EF00B6BD2E /* Food+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D81A0FF1280509EF00B6BD2E /* Food+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,8 @@
 		727A57C92801802E00B228E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D81A0FF0280509EF00B6BD2E /* Food+CoreDataClass.swift */,
+				D81A0FF1280509EF00B6BD2E /* Food+CoreDataProperties.swift */,
 				727A57C52801734D00B228E3 /* Food.swift */,
 			);
 			path = Model;
@@ -351,12 +357,14 @@
 				722F57F928028494002BC4AE /* UIColor+Ext.swift in Sources */,
 				72A1D0AD2801F6AB0035931D /* FoodDetailTextViewCell.swift in Sources */,
 				7222515D2802BE1300536729 /* NewFoodController.swift in Sources */,
+				D81A0FF3280509EF00B6BD2E /* Food+CoreDataProperties.swift in Sources */,
 				D81A0FEF280508C700B6BD2E /* Date+Ext.swift in Sources */,
 				72A1D0A92801F32E0035931D /* FoodDetailIconTextCell.swift in Sources */,
 				72A1D0A72801E62C0035931D /* FoodDetailHeaderView.swift in Sources */,
 				727A57C428016E0C00B228E3 /* FoodDetailViewController.swift in Sources */,
 				7264C63F27EC544400BC91B0 /* SceneDelegate.swift in Sources */,
 				72F7623828010BC800505D6E /* FoodTableViewController.swift in Sources */,
+				D81A0FF2280509EF00B6BD2E /* Food+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
