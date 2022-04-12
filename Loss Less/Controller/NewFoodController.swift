@@ -44,7 +44,6 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
     
         
     @IBAction func doneButtonTap(_ sender: Any) {
-        let components = Calendar.current.dateComponents([.month, .day], from: datePicker.date)
         // Request Notification Settings
           UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
               switch notificationSettings.authorizationStatus {
@@ -68,12 +67,12 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
                   content.sound = UNNotificationSound.default
                   
                   
-                  
                   var dateComponents = DateComponents()
                       dateComponents.hour = 12
-                      dateComponents.day = components.day
-                      dateComponents.month = components.month
-                      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                  dateComponents.minute = 18
+                  dateComponents.day = #selector(donePressedExp.components.day)
+                  dateComponents.month = donePressed(components.month)
+                      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
 
                       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                       center.add(request)
@@ -92,6 +91,7 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
     }
     
     let datePicker = UIDatePicker()
+    let datepickerexp = UIDatePicker()
     
     func createDatePicker() {
 
@@ -156,10 +156,11 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         
-        expTextField.text = formatter.string(from: datePicker.date)
+        expTextField.text = formatter.string(from: datepickerexp.date)
         self.view.endEditing(true)
+        let components = Calendar.current.dateComponents([.month, .day], from: datepickerexp.date)
+        print(components)
         
-        let components = Calendar.current.dateComponents([.month, .day], from: datePicker.date)
         
     }
     @IBOutlet var descriptionTextView: UITextView! {
