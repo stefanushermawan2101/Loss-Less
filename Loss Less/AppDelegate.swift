@@ -10,7 +10,7 @@ import CoreData
 import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -87,6 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //MARK: - User Notif
+    
     func registerForPushNotifications() {
         UNUserNotificationCenter.current()
           .requestAuthorization(
@@ -97,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           }
 
     }
-    
+
     func getNotificationSettings() {
       UNUserNotificationCenter.current().getNotificationSettings { settings in
           print("Notification settings: \(settings)")
@@ -116,13 +118,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let token = tokenParts.joined()
       print("Device Token: \(token)")
     }
-    
+
     func application(
       _ application: UIApplication,
       didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
       print("Failed to register: \(error)")
     }
+    
+    func scheduleNotification() {
+        let center = UNUserNotificationCenter.current()
 
+        let content = UNMutableNotificationContent()
+        content.title = "Food Reminder"
+        content.body = "Jangan lupa dimakan bro!"
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData": "fizzbuzz"]
+        content.sound = UNNotificationSound.default
+        
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+    }
+    
+    func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more…", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+
+        center.setNotificationCategories([category])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Default identifier")
+
+            case "show":
+                // the user tapped our "show more info…" button
+                print("Show more information…")
+                break
+
+            default:
+                break
+            }
+        }
+
+        // you must call the completion handler when you're done
+        completionHandler()
+    }
 }
 

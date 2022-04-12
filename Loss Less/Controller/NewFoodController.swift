@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -30,6 +31,59 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
             addedTextField.delegate = self
         }
     }
+    
+    func getNotificationSettings() {
+      UNUserNotificationCenter.current().getNotificationSettings { settings in
+          print("Notification settings: \(settings)")
+          guard settings.authorizationStatus == .authorized else { return }
+          DispatchQueue.main.async {
+            UIApplication.shared.registerForRemoteNotifications()
+          }
+      }
+    }
+    
+    @IBAction func doneButtonTap(_ sender: Any) {
+        // Request Notification Settings
+          UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
+              switch notificationSettings.authorizationStatus {
+              case .notDetermined:
+                  UNUserNotificationCenter.current()
+                    .requestAuthorization(
+                      options: [.alert, .sound, .badge]) { [weak self] granted, _ in
+                      print("Permission granted: \(granted)")
+                      guard granted else { return }
+                      self?.getNotificationSettings()
+                    }
+              case .authorized:
+                  // Schedule Local Notification
+                  let center = UNUserNotificationCenter.current()
+
+                  let content = UNMutableNotificationContent()
+                  content.title = "Food Reminder"
+                  content.body = "Jangan lupa dimakan bro!"
+                  content.categoryIdentifier = "alarm"
+                  content.userInfo = ["customData": "fizzbuzz"]
+                  content.sound = UNNotificationSound.default
+                  
+                  
+                  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+
+                  let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                      center.add(request)
+                  print("MASUK BRO!")
+              case .denied:
+                  print("Application Not Allowed to Display Notifications")
+              case .provisional:
+                  print("Case Provisional")
+              case .ephemeral:
+                  print("Case Ephemeral")
+              @unknown default:
+                  print("Error Default")
+              }
+          }
+    
+    }
+    
     let datePicker = UIDatePicker()
     
     func createDatePicker() {
