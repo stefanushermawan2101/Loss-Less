@@ -76,8 +76,7 @@ class FoodTableViewController: UITableViewController {
         cell.foodAddedDateLabel.text = foods[indexPath.row].addedDate
         cell.foodExpDateLabel.text = foods[indexPath.row].expDate
         cell.foodImageView.image = UIImage(named: foods[indexPath.row].image)
-        cell.conditionImageView.image = UIImage(named: foods[indexPath.row].condition)
-        
+       
         cell.accessoryType = foods[indexPath.row].isEaten ? .checkmark : .none
         
         return cell
