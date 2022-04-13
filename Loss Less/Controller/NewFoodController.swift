@@ -44,7 +44,6 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
     
         
     @IBAction func doneButtonTap(_ sender: Any) {
-        let componentexp = Calendar.current.dateComponents([.month, .day], from: datepickerexp.date)
         // Request Notification Settings
         UNUserNotificationCenter.current().getNotificationSettings { [self] (notificationSettings) in
               switch notificationSettings.authorizationStatus {
@@ -67,21 +66,9 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
                   content.userInfo = ["customData": "fizzbuzz"]
                   content.sound = UNNotificationSound.default
                   
-                  
-//              var dateComponents = DateComponents()
-//                  dateComponents.hour = 9
-//                  dateComponents.minute = 15
-//                  dateComponents.day = componentexp.day
-//                  dateComponents.month = componentexp.month
-//                  //dateComponents.day = #selector(donePressedExp.components.day)
-//                  //dateComponents.month = donePressed(components.month)
-//                  let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.datepickerexp.date)
-//
-//                  let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
-                  
-                  var dateComponent = self.datePicker.calendar.dateComponents([.day, .hour, .minute], from: datePicker.date)
+                  var dateComponent = self.datePicker.calendar.dateComponents([.day, .hour, .minute], from: datepickerexp.date)
                   dateComponent.hour = 9
-                  dateComponent.minute = 24
+                  dateComponent.minute = 29
                       let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
 
                       let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
