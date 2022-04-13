@@ -44,8 +44,9 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
     
         
     @IBAction func doneButtonTap(_ sender: Any) {
+        let componentexp = Calendar.current.dateComponents([.month, .day], from: datepickerexp.date)
         // Request Notification Settings
-          UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
+        UNUserNotificationCenter.current().getNotificationSettings { [self] (notificationSettings) in
               switch notificationSettings.authorizationStatus {
               case .notDetermined:
                   UNUserNotificationCenter.current()
@@ -67,16 +68,27 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
                   content.sound = UNNotificationSound.default
                   
                   
-                  var dateComponents = DateComponents()
-                      dateComponents.hour = 12
-                  dateComponents.minute = 18
-                  dateComponents.day = #selector(donePressedExp.components.day)
-                  dateComponents.month = donePressed(components.month)
-                      let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+//              var dateComponents = DateComponents()
+//                  dateComponents.hour = 9
+//                  dateComponents.minute = 15
+//                  dateComponents.day = componentexp.day
+//                  dateComponents.month = componentexp.month
+//                  //dateComponents.day = #selector(donePressedExp.components.day)
+//                  //dateComponents.month = donePressed(components.month)
+//                  let comps = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self.datepickerexp.date)
+//
+//                  let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: false)
+                  
+                  var dateComponent = self.datePicker.calendar.dateComponents([.day, .hour, .minute], from: datePicker.date)
+                  dateComponent.hour = 9
+                  dateComponent.minute = 24
+                      let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
 
-                      let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                      center.add(request)
-                  print("MASUK BRO!")
+                      let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
+
+                  let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                  center.add(request)
+                  print(dateComponent)
               case .denied:
                   print("Application Not Allowed to Display Notifications")
               case .provisional:
@@ -141,14 +153,15 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         
         expTextField.inputAccessoryView = toolbar
         
-        expTextField.inputView = datePicker
+        expTextField.inputView = datepickerexp
 
         
-        datePicker.datePickerMode = .date
+        datepickerexp.datePickerMode = .date
         
-        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datepickerexp.frame.size = CGSize(width: 0, height: 300)
         
-        datePicker.preferredDatePickerStyle = .inline
+        datepickerexp.preferredDatePickerStyle = .inline
+        
     }
 
     @objc func donePressedExp(){
@@ -158,8 +171,6 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         
         expTextField.text = formatter.string(from: datepickerexp.date)
         self.view.endEditing(true)
-        let components = Calendar.current.dateComponents([.month, .day], from: datepickerexp.date)
-        print(components)
         
         
     }
