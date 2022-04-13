@@ -42,9 +42,10 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
       }
     }
     
+        
     @IBAction func doneButtonTap(_ sender: Any) {
         // Request Notification Settings
-          UNUserNotificationCenter.current().getNotificationSettings { (notificationSettings) in
+        UNUserNotificationCenter.current().getNotificationSettings { [self] (notificationSettings) in
               switch notificationSettings.authorizationStatus {
               case .notDetermined:
                   UNUserNotificationCenter.current()
@@ -65,12 +66,16 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
                   content.userInfo = ["customData": "fizzbuzz"]
                   content.sound = UNNotificationSound.default
                   
-                  
-                  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+                  var dateComponent = self.datePicker.calendar.dateComponents([.day, .hour, .minute], from: datepickerexp.date)
+                  dateComponent.hour = 9
+                  dateComponent.minute = 29
+                      let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
+
+                      let notificationReq = UNNotificationRequest(identifier: "identifier", content: content, trigger: trigger)
 
                   let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                      center.add(request)
-                  print("MASUK BRO!")
+                  center.add(request)
+                  print(dateComponent)
               case .denied:
                   print("Application Not Allowed to Display Notifications")
               case .provisional:
@@ -85,6 +90,7 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
     }
     
     let datePicker = UIDatePicker()
+    let datepickerexp = UIDatePicker()
     
     func createDatePicker() {
 
@@ -134,14 +140,15 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         
         expTextField.inputAccessoryView = toolbar
         
-        expTextField.inputView = datePicker
+        expTextField.inputView = datepickerexp
 
         
-        datePicker.datePickerMode = .date
+        datepickerexp.datePickerMode = .date
         
-        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datepickerexp.frame.size = CGSize(width: 0, height: 300)
         
-        datePicker.preferredDatePickerStyle = .inline
+        datepickerexp.preferredDatePickerStyle = .inline
+        
     }
 
     @objc func donePressedExp(){
@@ -149,9 +156,10 @@ class NewFoodController: UITableViewController, UITextFieldDelegate, UIImagePick
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         
-        expTextField.text = formatter.string(from: datePicker.date)
+        expTextField.text = formatter.string(from: datepickerexp.date)
         self.view.endEditing(true)
-
+        
+        
     }
     @IBOutlet var descriptionTextView: UITextView! {
         didSet {
